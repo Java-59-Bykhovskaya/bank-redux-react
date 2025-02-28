@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { store } from '../configureStore/store.js';
 import { deposit, withdraw } from '../actions/accountActions.js';
+import { useDispatch } from 'react-redux';
 
 const Operation = () => {
 
   const[sum, setSum] = useState(0);
 
+  const dispatch = useDispatch();
   return (
     <div>
-      <button onClick={() => store.dispatch(withdraw(sum))}>Withdraw</button>
+      <button onClick={() => dispatch(withdraw(sum))}>Withdraw</button>
       <input type={'number'} onChange={e => setSum(+e.target.value)} value={sum}/>
-      <button onClick={() => store.dispatch(deposit(sum))}>Deposit</button>
+      <button onClick={() => dispatch(deposit(sum))}>Deposit</button>
     </div>
   );
 };
