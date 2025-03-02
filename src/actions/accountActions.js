@@ -2,7 +2,7 @@ export const DEPOSIT = 'DEPOSIT';
 export const WITHDRAW = 'WITHDRAW';
 
 export const deposit = sum => ({
-   type: DEPOSIT,
+     type: DEPOSIT,
    payload: sum
  })
 
